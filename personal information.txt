@@ -1,0 +1,72 @@
+
+
+html>
+<head>
+<title> Demo for contents</title>
+<script>
+function print()
+{
+document.getElementById	("result").innerHTML="Your Name is : "+document.getElementById("uName").value;	
+document.getElementById	("result1").innerHTML="Your Password is is : "+document.getElementById("pass").value;
+document.getElementById	("result2").innerHTML="Your address is is : "+document.getElementById("Add").value;
+document.getElementById	("result3").innerHTML="Your email_id is : "+document.getElementById("mail").value;
+document.getElementById	("result4").innerHTML="Your phone no is : "+document.getElementById("phone").value;
+document.getElementById	("result5").innerHTML="Your DOB is : "+document.getElementById("DOB").value;
+var ele=document.getElementsByName('status');
+for(i=0;i<ele.length;i++)
+{
+if(ele[i].checked)
+document.getElementById('result6').innerHTML="You are a : "+ele[i].value;
+}
+var selbox=[];
+var inp=document.getElementsByName('a[]');
+for(var i=0;i<inp.length;i++)
+{
+if(inp[i].checked==true)
+selbox.push(inp[i].value);
+}
+document.getElementById("result7").innerHTML="You like these :"+selbox;
+var e = document.getElementById("city");
+var result = e.options[e.selectedIndex].value;
+document.getElementById("result8").innerHTML = "Now You stay in "+ result;
+}
+</script>
+</head>
+<body>
+<form>
+Enter your name: <input type="text" name="name" id="uName"><br>
+Enter your password: <input type="password" name="pass" id="pass"><br>
+Enter your Address : <input type="text" name="address" id="Add"><br>
+Enter your E-mail : <input type="email" name="email" id="mail"><br>
+Enter your phone no : <input type="number" name="cellno" id="cell"><br>
+Enter your birthdate :<input type="date" name="date" id="DOB"><br>
+Gender<br>
+<input type="radio" name="status" value="male" id="status">male<br>
+<input type="radio" name="status" value="female" id="status">female<br>
+Hobbies<br>
+<input type="checkbox" name="a[]" value="reading">reading<br>
+<input type="checkbox" name="a[]" value="playing">playing<br>
+<input type="checkbox" name="a[]" value="garderning">garderning<br>
+<input type="checkbox" name="a[]" value="singing">singing<br>
+<select id="city">
+<option value="chennai">chennai</option>
+<option value="hyderabad">hyderabad</option>
+<option value="Banglore">Banglore</option>
+<option value="mumbai">mumbai</option>
+</select><br>
+<br>
+<button type="button"  value="submit" onClick="print()">click</button><br>
+</form>
+<label><h1><u><b style=font-color:"red">"show personal information"</b></u></h1></label>
+<div Id="result"></div>
+<div Id="result1"></div>
+<div Id="result2"></div>
+<div Id="result3"></div>
+<div Id="result4"></div>
+<div Id="result5"></div>
+<div Id="result6"></div>
+<div Id="result7"></div>
+<div Id="result8"></div>
+</body>
+</html>
+
